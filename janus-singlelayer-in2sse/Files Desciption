@@ -8,3 +8,14 @@
 correction (DFT-D2) method of Grimme. Set LVDW = .True
 
 4).All calculations are performed with the spin-polarized case when considering spin-orbit interactions. Therefore add ISPIN = 2
+
+## POTCAR
+
+potcar.sh S Se In
+
+## KPOINTS.grid
+
+kpoins.sh 18 18 1
+
+We strongly recommend to use only Gamma centered grids for hexagonal lattices
+
