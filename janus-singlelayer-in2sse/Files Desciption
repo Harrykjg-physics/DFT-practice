@@ -29,3 +29,8 @@ kpoins.sh 18 18 1
 
 We strongly recommend to use only Gamma centered grids for hexagonal lattices
 
+Errors:
+
+Error occurs during relaxation:ZBRENT: fatal error in bracketing,please rerun with smaller EDIFF, or copy CONTCAR to POSCAR and continue
+
+soln: 1) Add Encut 2) Lower EDiFF  3)Change IBRION = 2 to IBRION = 1(local search)  4) Lower POTIM(By default 0.5) to 0.1 for IBRION = 2
