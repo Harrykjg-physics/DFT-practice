@@ -9,6 +9,16 @@ correction (DFT-D2) method of Grimme. Set LVDW = .True
 
 4).All calculations are performed with the spin-polarized case when considering spin-orbit interactions. Therefore add ISPIN = 2
 
+5). Note!!!  For 2d material,ISIF = 3 may relax away the vacumm !!! ISIF=4 relaxes only the cell shape at fixed volume. 
+This will also change the thickness of the vacuum layer (a bit) but it can never collapse it. So use ISIF=4 for an all-in-one relaxation.
+ 
+But don't forget to increase the cutoff then in order to avoid Pulay stresses.
+And overall precision settings (PREC, EDIFF, etc.) should be "high". As you mentioned ISIF=2 gives you more symmetric structures: 
+With ISIF=4 you can never avoid a small symmetry break due to noise in the stress tensor and the quality of the stress tensor is 
+very sensitive with respect to e.g. convergence of wave functions etc. and for that reason it must be a high-quality calculation.
+ 
+See png file  
+ 
 ## POTCAR
 
 potcar.sh S Se In
