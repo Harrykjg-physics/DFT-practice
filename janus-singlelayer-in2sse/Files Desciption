@@ -41,5 +41,7 @@ soln: use scripts to see the convergence in OUTCAR ---- grad2(grad2 OUTCAR) to s
 
 All my Scripts are stored in ~/bin !!
 
+Then adjust POTIM-tag
+
 
 
