@@ -31,6 +31,13 @@ We strongly recommend to use only Gamma centered grids for hexagonal lattices
 
 Errors:
 
-Error occurs during relaxation:ZBRENT: fatal error in bracketing,please rerun with smaller EDIFF, or copy CONTCAR to POSCAR and continue
+a)Error occurs during relaxation:ZBRENT: fatal error in bracketing,please rerun with smaller EDIFF, or copy CONTCAR to POSCAR and continue
 
 soln: 1) Add Encut 2) Lower EDiFF  3)Change IBRION = 2 to IBRION = 1(local search)  4) Lower POTIM(By default 0.5) to 0.1 for IBRION = 2
+
+b)Error occurs after setting IBRION = 1 and POTIM = 0.1:   BRION problems: increase your POTIM
+
+soln: use scripts to see the convergence in OUTCAR ---- grad2(grad2 OUTCAR) to see whether POTIM too large or small
+
+
+
