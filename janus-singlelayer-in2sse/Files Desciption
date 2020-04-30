@@ -39,5 +39,7 @@ b)Error occurs after setting IBRION = 1 and POTIM = 0.1:   BRION problems: incre
 
 soln: use scripts to see the convergence in OUTCAR ---- grad2(grad2 OUTCAR) to see whether POTIM too large or small
 
+All my Scripts are stored in ~/bin !!
+
 
 
