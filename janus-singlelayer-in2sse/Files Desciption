@@ -41,5 +41,21 @@ soln: use scripts to see the convergence in OUTCAR ---- grad2(grad2 OUTCAR) to s
 
 All my Scripts are stored in ~/bin !!
 
+Then adjust POTIM-tag
+
+c) The elements in POSCAR are interchanged after sevreal relaxation process !!! 
+soln: Get another POTCAR 
+
+Also Another error occurs: 
+
+VERY BAD NEWS! internal error in subroutine SGRCON: Found some non-integer element in rotation matrix 2
+
+solns:his error is symmetry related. In the VASP forum the suggested solution is to increase the SYMPREC parameter. 
+An alternative solution which also works but may be safer from the accuracy point of view (and increases the computational cost) is 
+to switch of symmetry by setting ISYM = 0.
+
+
+
+
 
 
