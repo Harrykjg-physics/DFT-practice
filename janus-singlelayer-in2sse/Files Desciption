@@ -2,7 +2,7 @@
 
 1).In order to do phonon calculation,need accurate relaxation EDIFF = 1e-8 and EDIFFG = -1e-8
 
-2).ISIF = 3,therefore at least 30% higher than ENMAX for each element in the POTCAR,set ENMAX = 400
+2).ISIF = 3,therefore at least 30% higher than ENMAX for each element in the POTCAR,set ENMAX = 400 (WRONG!!)
 
 3).The van der Waals (vdW) correction to the GGA functional is included by using the density functional theory long-range dispersion 
 correction (DFT-D2) method of Grimme. Set LVDW = .True
@@ -18,6 +18,8 @@ With ISIF=4 you can never avoid a small symmetry break due to noise in the stres
 very sensitive with respect to e.g. convergence of wave functions etc. and for that reason it must be a high-quality calculation.
  
 See png file  
+
+6) For semiconductor with many kpoints(>4),use ISMEAR = -5 !! (Previously use ISMEAR = 0 is for less kpoints)
  
 ## POTCAR
 
@@ -27,7 +29,9 @@ potcar.sh S Se In
 
 kpoins.sh 18 18 1
 
-We strongly recommend to use only Gamma centered grids for hexagonal lattices
+maybe reduce to 12 12 1
+
+We strongly recommend to use only Gamma centered grids for hexagonal lattices !!
 
 Errors:
 
