@@ -54,6 +54,10 @@ solns:his error is symmetry related. In the VASP forum the suggested solution is
 An alternative solution which also works but may be safer from the accuracy point of view (and increases the computational cost) is 
 to switch of symmetry by setting ISYM = 0.
 
+d) It's getting good convergence because is energy is not changing for many steps , and dE reaches -8 ,but 
+still not echo 'reached required accuracy' and processing very slowly
+
+soln: not use ISYM = 0(computational too cost),increase ENCUT ,set ADDGRID = .True as said in png
 
 
 
