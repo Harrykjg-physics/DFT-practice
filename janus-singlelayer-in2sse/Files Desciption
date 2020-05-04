@@ -21,7 +21,8 @@ See png file
 
 6) For semiconductor with many kpoints(>4),use ISMEAR = -5 !! (Previously use ISMEAR = 0 is for less kpoints)
 
-7) I think I should add NCORE = # of cores / compute nodes , which # of cores = # of atoms , But how to specify compute nodes??
+7) I think I should use only 4 cores (4 atoms in a unitcell) , add NCORE = # of cores / compute nodes , which # of cores = # of atoms , 
+But how to specify compute nodes ??  
  
 ## POTCAR
 
