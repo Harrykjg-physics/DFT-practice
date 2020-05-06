@@ -1,0 +1,29 @@
+SYSTEM = Bulk Si
+PREC = Accurate
+ISTART = 1  # read from CHGCAR
+ICHARG = 11
+
+ENCUT = 320  #130% bigger than ENMAX
+ISMEAR = 0
+SIGMA = 0.1
+EDIFF = 1E-7
+
+LORBIT = 11
+#NEDOS = 3000
+# EMIN = -5
+# EMAX = 5 
+NBANDS = 24
+
+#ISIF = 3  #relaxing atoms,cell shape,cell volume
+#IBRION = 2  # CG algoor
+#NSW = 200
+#EDIFFG = -1E-2
+
+ISYM = 1
+LWAVE = .FALSE.
+LCHARG = .TRUE.
+
+NCORE = 2
+
+
+
