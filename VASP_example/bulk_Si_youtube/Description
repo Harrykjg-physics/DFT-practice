@@ -1,0 +1,102 @@
+learn from the youtube channel :
+
+# Relaxation
+
+INCAR.relax : 
+1) ISIF = 3 for bulk relaxation
+2) ENCUT 130% larger than ENMAX when cell shape and volume will be changed (PulayStress)
+3) Gaussian smearing be good for most cases
+4) start from scratch ISTART = 0 , ICHARG = 2
+5) cores in Si.pbs set to 8 (# of atoms)
+6) turn off CHGCAR and WAVECAR
+
+KPOINTS.grid:
+
+do a kpoints convergence test(using kpoints_test.sh and draw_results.sh)
+it will be OK if two adjent energy is less than 0.01 eV
+choose 6 6 6 (kpoints.sh 6 6 6)
+
+POSCAR
+
+conventional cell contaning 8 Si atoms (2 atoms in primitive cell) created from Material Studio
+
+# scf
+
+cp relaxed structure (CONTCAR) here
+
+INCAR.scf:
+1) NO ionic step
+2) turn on CHGCAR (LCHARG = .TRUE.)
+3) cp CONTCAR POSCAR
+
+# dos
+
+cp CHGCAR here
+
+INCAR:
+
+1) read from CHGCAR (ISTAR = 1,ICHAGR = 11,it's ok not to set,it is defalt setting if CHGCAR exist)
+2) ISMEAR = -5 for dos calculation
+3) LORBIT = 11 for projected dos on atoms and orbitals
+4) NEDOS = 3000 to resolve peaks (default 301)
+5) others stay same as INCAR.scf
+
+KPOINTS:
+
+enlarge grid to 21  21  21 for dos
+
+
+## get vasprun.xml , and visualize in p4vasp:
+TOTal DOS: show DOS + BAND
+Projected DOS: electronic ->  Local Dos and Band -> 1. Si  2. 3.0(size) 3. diselect all,choose one  4. Add a New line
+
+## using vaspkit to get TDOS and PDOS and visualize it in Originlab
+
+
+# soi
+
+# INCAR.soi
+
+Compared to INCAR.scf
+
+1) add LORBIT = 11 for projected band
+2) add NBANDS = 24 (go to scf folder , grep NBANDS OUTCAR , or NION/2 + NELECT /2)
+
+# KPOINTS
+
+go to scf folder,use vaspkit to genrate KPATH.in and HIGH_SYMMETRY_POINTS
+
+cp KPATH.in KPOINTS.band , change 20 to 100  in KPOINTS.band file
+
+
+## get vasprun.xml , and visualize in p4vasp:
+TOTal BAND: show DOS + BAND -> show BAND 
+Projected DOS: electronic ->  Local Dos and Band -> 1. Si  2. 3.0(size) 3. diselect all,choose one  4. Add a New line
+
+## using vaspkit to get BAND.dat and PBAND.dat and visualize it in Originlab
+
+## cat BAND_GAP to the a summary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
