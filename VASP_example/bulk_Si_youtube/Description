@@ -45,6 +45,8 @@ KPOINTS:
 
 enlarge grid to 21  21  21 for dos
 
+## cat DOSCAR for some summary
+
 
 ## get vasprun.xml , and visualize in p4vasp:
 TOTal DOS: show DOS + BAND
