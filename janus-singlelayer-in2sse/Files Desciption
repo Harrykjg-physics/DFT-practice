@@ -7,6 +7,10 @@
 3).The van der Waals (vdW) correction to the GGA functional is included by using the density functional theory long-range dispersion 
 correction (DFT-D2) method of Grimme. Set LVDW = .True.
 
+All methods listed above add vdW correction to potential energy, interatomic forces, as well as stress tensor and hence simulations 
+such as atomic and lattice relaxations, molecular dynamics, and vibrational analysis (via finite differences) can be performed. 
+Note, however, that these correction schemes are currently not available for calculations based on density functional perturbation theory.
+
 N.B.: The parameter LVDW used in previous versions of VASP (5.2.11 and later) to activate DFT-D2 method is now obsolete. 
 If LVDW=.TRUE. is defined, IVDW is automatically set to 1 (unless IVDW is specified in INCAR).
 
