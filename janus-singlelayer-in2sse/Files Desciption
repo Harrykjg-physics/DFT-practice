@@ -5,7 +5,10 @@
 2).ISIF = 3,therefore at least 30% higher than ENMAX for each element in the POTCAR,set ENMAX = 400 (WRONG!!)
 
 3).The van der Waals (vdW) correction to the GGA functional is included by using the density functional theory long-range dispersion 
-correction (DFT-D2) method of Grimme. Set LVDW = .True
+correction (DFT-D2) method of Grimme. Set LVDW = .True.
+
+N.B.: The parameter LVDW used in previous versions of VASP (5.2.11 and later) to activate DFT-D2 method is now obsolete. 
+If LVDW=.TRUE. is defined, IVDW is automatically set to 1 (unless IVDW is specified in INCAR).
 
 4).All calculations are performed with the spin-polarized case when considering spin-orbit interactions. Therefore add ISPIN = 2
 
