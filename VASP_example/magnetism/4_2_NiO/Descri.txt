@@ -1,0 +1,33 @@
+# INCAR
+
+Initial magnetic moments of 2¦ÌB (Ni) and 0¦ÌB (O)  
+
+AMIX specifies the linear mixing parameter.
+
+BMIX sets the cutoff wave vector for Kerker mixing scheme. 
+
+The parameters for the mixing are optimal if the mean eigenvalue ¦£mean=1, and if the width of the eigenvalue spectrum is minimal. 
+For an initial linear mixing (BMIX¡Ö0) an optimal setting for AMIX can be found easily by setting AMIXoptimal=AMIXcurrent*¦£mean. 
+For the Kerker scheme (IMIX=1) either AMIX or BMIX can be optimized, but we recommend to change only BMIX and keep AMIX fixed 
+(you must decrease BMIX if the mean eigenvalue is larger than one, and increase BMIX if the mean eigenvalue ¦£mean<1).
+
+AMIX_MAG linear mixing parameter for the magnetization density. AMIX_MAG = 1.6
+
+BMIX_MAG sets the cutoff wave vector for Kerker mixing scheme(IMIX=1 and/or INIMIX=1) for the magnetization density.
+
+There are only a few other parameter combinitions which can be tried, if convergence turns out to be very slow. 
+In particular, for slabs, magnetic systems and insulating systems (e.g. molecules and clusters), an initial "linear mixing" can result 
+in faster convergence than the Kerker model function.[1] One can therefore try to use the following setting£º
+
+
+AMIX     = 0.2
+BMIX     = 0.0001 ! almost zero, but 0 will crash some versions
+AMIX_MAG = 0.8
+BMIX_MAG = 0.0001 ! almost zero, but 0 will crash some versions
+
+# POSCAR
+
+The sixth line specifies the constituting elements (in the order how they appear in the POTCAR file). 
+The seventh line supplies the number of atoms per atomic species 
+
+
