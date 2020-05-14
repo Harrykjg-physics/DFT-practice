@@ -31,3 +31,12 @@ The sixth line specifies the constituting elements (in the order how they appear
 The seventh line supplies the number of atoms per atomic species 
 
 AFM coupling: 4 atoms in the basis (instead of 2).
+
+
+# OUTPUT
+
+The total magnetic moment should be 0 in the OSZICAR file
+
+The partial and integrated magnetic moments within the PAW spheres are given in the OUTCAR file
+
+The example total DOS and the partial l-decomposed DOS for the d orbitals of Ni should look like the following (see png)
