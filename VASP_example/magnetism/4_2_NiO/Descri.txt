@@ -30,4 +30,4 @@ BMIX_MAG = 0.0001 ! almost zero, but 0 will crash some versions
 The sixth line specifies the constituting elements (in the order how they appear in the POTCAR file). 
 The seventh line supplies the number of atoms per atomic species 
 
-
+AFM coupling: 4 atoms in the basis (instead of 2).
