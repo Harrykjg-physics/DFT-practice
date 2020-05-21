@@ -1,0 +1,64 @@
+# INCAR
+
+
+Initialization of moment along z-direction (out of plane) (MAGMOM = 0.0 0.0 1.0).
+
+Spin-orbit interaction switched on (LSORBIT=.TRUE.).
+
+For the second calculation, switch to in-plane magnetization by setting MAGMOM = 1.0 0.0 0.0 in the INCAR file.
+
+
+LNONCOLLINEAR = .TRUE. | .FALSE.
+Default: LNONCOLLINEAR = .FALSE. 
+
+Description: LNONCOLLINEAR specifies whether fully non-collinear magnetic calculations are performed.
+
+Setting LNONCOLLINEAR = .TRUE. in the INCAR file allows to perform fully non-collinear magnetic structure calculations. 
+VASP is capable of reading WAVECAR and CHGCAR files from previous non-magnetic or collinear calculations, 
+it is however not possible to rotate the magnetic field locally on selected atoms.
+
+Hence, in practice, we recommend to perform non-collinear calculations in two steps:
+
+First, calculate the non magnetic groundstate and generate a WAVECAR and CHGCAR file.
+Second, read the WAVECAR and CHGCAR file, and supply initial magnetic moments by means of the MAGMOM tag (compare MAGMOM).
+
+For a non-collinear setup, three values must be supplied for each ion in the MAGMOM line. 
+
+The three entries correspond to the initial local magnetic moment for each ion in x, y and z direction respectively. The line£º
+
+MAGMOM = 1 0 0   0 1 0
+
+initialises the magnetic moment on the first atom in the x-direction, and on the second atom in the y direction. 
+Mind, that the MAGMOM line supplies initial magnetic moments only if ICHARG = 2, 
+or if the CHGCAR file contains only charge but no magnetisation density.
+
+
+VOSKOWN = 0 | 1
+Default: VOSKOWN = 0 
+
+Description: Determines whether Vosko-Wilk-Nusair interpolation is used or not.
+
+The Vosko, Wilk and Nusair interpolation usually enhances the magnetic moments and the magnetic energies.
+Setting this tag is not required for most modern functions, such as the PBE or PBEsol functional, 
+since these functional strictly follow the original publications and disregard the setting of this flag entirely
+
+LMAXMIX = [integer]
+Default: LMAXMIX = 2 
+
+Description: LMAXMIX controls up to which l-quantum number the one-center PAW charge densities are passed through the 
+charge density mixer and written to the CHGCAR file.
+
+L(S)DA+U calculations require in many cases an increase of LMAXMIX to 4 for d-electrons (or 6 for f-elements) 
+in order to obtain fast convergence to the groundstate.
+
+
+
+# OUTPUT
+
+
+From the energy difference of these calculations we see that the easy axis lies in plane
+
+
+
+
+
